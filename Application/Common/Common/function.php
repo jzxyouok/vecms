@@ -17,3 +17,12 @@ function show($status, $message, $data = array()) {
     );
     exit(json_encode($result));
 }
+
+/**
+ * 将密码进行md5加密
+ * @param string $password
+ * @return string
+ */
+function getMd5Password($password) {
+    return md5($password . C('MD5_PRE'));
+}

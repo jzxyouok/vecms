@@ -45,7 +45,7 @@ CREATE TABLE `cms_news` (
   `posids` varchar(250) NOT NULL DEFAULT '',
   `listorder` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `status` tinyint(1)  NOT NULL DEFAULT '1',
-  `copyfrom` varchar(250) DEFAULT NULL COMMENT '来源',
+  `copyfrom` varchar(250) DEFAULT NULL COMMENT '来源',
   `username` char(20) NOT NULL,
   `create_time` int(10) unsigned NOT NULL DEFAULT '0',
   `update_time` int(10) unsigned NOT NULL DEFAULT '0',

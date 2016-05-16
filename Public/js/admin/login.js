@@ -9,10 +9,10 @@ var login = {
         var password = $('input[name="password"]').val();
 
         if (!username) {
-            dialog.error('用户名不能为空');
+            return dialog.error('用户名不能为空');
         }
         if (!password) {
-            dialog.error('密码不能为空');
+            return dialog.error('密码不能为空');
         }
 
         var url  = 'index.php?m=admin&c=login&a=check';
@@ -20,8 +20,10 @@ var login = {
         $.post(url, data, function(result){
             if (result.status == 0) {
                 dialog.error(result.message);
-                console.log(result.message);
             }
-        }, 'json');
+            if (result.status == 1) {
+                dialog.success(result.message, 'index.php?m=admin&c=index');
+            }
+        }, 'JSON');
     }
 }
